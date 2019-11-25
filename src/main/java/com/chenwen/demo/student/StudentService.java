@@ -1,5 +1,6 @@
 package com.chenwen.demo.student;
 
+import com.chenwen.demo.exception.ApiRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,7 @@ public class StudentService {
     }
 
     List<Student> getAllStudents() {
+//        throw new ApiRequestException("Oops cannot get all students");
         return studentDataAccessService.selectAllStudents();
     }
 
