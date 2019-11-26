@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("students")
@@ -25,7 +24,6 @@ public class StudentController {
 
     @PostMapping
     public void addNewStudent (@RequestBody @Valid Student student) {
-        // TODO Validate email
         studentService.addNewStudent(student);
     }
 }

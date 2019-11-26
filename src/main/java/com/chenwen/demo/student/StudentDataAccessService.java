@@ -37,8 +37,14 @@ public class StudentDataAccessService {
         };
     }
 
-    public void insertStudent(UUID newStudentId, Student student) {
+    void insertStudent(UUID newStudentId, Student student) {
         String sql = "INSERT INTO student (student_id, first_name, last_name, email, gender) Values(?, ?, ?, ?, ?)";
         jdbcTemplate.update(sql, newStudentId, student.getFirstName(), student.getLastName(), student.getEmail(), student.getGender().name().toUpperCase());
+    }
+
+    @SuppressWarnings("ConstantConditions")
+    boolean isEmailTaken(String email) {
+        String sql = "SELECT EXISTS (SELECT 1 FROM student WHERE email = ?)";
+        return jdbcTemplate.queryForObject(sql, new Object[]{email}, (resultSet, i) -> resultSet.getBoolean(1));
     }
 }
