@@ -29,3 +29,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### js ###
+/src/spring-react-demo-js/

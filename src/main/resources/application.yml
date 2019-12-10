@@ -1,6 +1,6 @@
 server:
   servlet:
-    context-path: '/api'
+    context-path: '/'
 app:
   datasource:
     jdbc-url: jdbc:postgresql://139.159.201.49:5432/dbtest
@@ -8,5 +8,7 @@ app:
     password: 70706498
     pool-size: 30
 spring:
+  profiles:
+    active: @spring.profiles.active@
   flyway:
     baseline-on-migrate: true

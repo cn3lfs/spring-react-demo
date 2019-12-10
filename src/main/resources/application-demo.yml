@@ -1,0 +1,12 @@
+server:
+  servlet:
+    context-path: '/'
+app:
+  datasource:
+    jdbc-url: jdbc:postgresql://fullstackdb.colymfc4it2m.ap-northeast-1.rds.amazonaws.com/dbdemo
+    username: chenwen
+    password: 70706498
+    pool-size: 30
+spring:
+  profiles:
+    active: @spring.profiles.active@
